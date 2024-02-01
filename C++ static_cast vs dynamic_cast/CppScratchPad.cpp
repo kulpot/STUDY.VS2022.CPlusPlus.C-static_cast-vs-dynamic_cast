@@ -9,11 +9,30 @@ using std::endl;
 //---------------------- C++ static_cast vs dynamic_cast -------------------------------------------------------
 //ref link:https://www.youtube.com/watch?v=0AuPWXuBmyo&list=PLRwVmtr-pp05motkiTlDIuU5ZfoRr-kWC&index=7
 
+class Base
+{
+public:
+	virtual void f() {}
+};
+
+class Derived1 : public Base
+{
+	int someData;
+public:
+	Derived1() { someData = 0; }
+	void derived1Function()
+	{
+		cout << "Derived::f()" << someData << endl;
+	}
+};
 
 
+class Derived2 : public Base {};
 
+void main()
+{
 
-
+}
 
 
 
