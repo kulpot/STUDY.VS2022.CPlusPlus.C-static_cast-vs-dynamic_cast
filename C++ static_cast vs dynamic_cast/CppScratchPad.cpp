@@ -6,42 +6,82 @@
 using std::cout;
 using std::endl;
 
+//---------------------- C++ static_cast vs dynamic_cast -------------------------------------------------------
+//ref link:https://www.youtube.com/watch?v=0AuPWXuBmyo&list=PLRwVmtr-pp05motkiTlDIuU5ZfoRr-kWC&index=7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //----------------------- C++ dynamic_cast -------------------------------------------------------------
 //ref link:https://www.youtube.com/watch?v=tRyLVEUSJkM&list=PLRwVmtr-pp05motkiTlDIuU5ZfoRr-kWC&index=4
 
 //Dynamic_cast - is another RTTI(RunTimeTypeIdentification) checking
 //Static_cast - compile time type checking
 
-//class Base {};		// no polymorphism
-class Base	// with polymorphism
-{
-	virtual void f() {};
-};
-class Derived1 : public Base {};
-class Derived2 : public Base {};
-
-void main()
-{
-	srand(time(0));
-	Base* b =
-		(rand() % 2 == 0) ? 
-		static_cast<Base*>(new Derived1) 
-		: new Derived2;
-	//####RTTI################
-	Derived1* d1 = dynamic_cast<Derived1*>(b);	//<----- dynamic_casting return null(or0) if Derived2
-	//if(d1 != NULL) // explicit same as if(d1 != 0)
-	if(d1)			// C++ trick that converts a pointer to boolean type
-	//if (typeid(*b) == typeid(Derived1))
-	{
-		cout << "Derived1" << endl;
-	}
-	Derived2* d2 = dynamic_cast<Derived2*>(b);	//<----- dynamic_casting return null(or0) if Derived1
-	if(d2)
-	//else if (typeid(*b) == typeid(Derived2))
-	{
-		cout << "Derived2" << endl;
-	}
-}
+////class Base {};		// no polymorphism
+//class Base	// with polymorphism
+//{
+//	virtual void f() {};
+//};
+//class Derived1 : public Base {};
+//class Derived2 : public Base {};
+//
+//void main()
+//{
+//	srand(time(0));
+//	Base* b =
+//		(rand() % 2 == 0) ? 
+//		static_cast<Base*>(new Derived1) 
+//		: new Derived2;
+//	//####RTTI################
+//	Derived1* d1 = dynamic_cast<Derived1*>(b);	//<----- dynamic_casting return null(or0) if Derived2
+//	//if(d1 != NULL) // explicit same as if(d1 != 0)
+//	if(d1)			// C++ trick that converts a pointer to boolean type
+//	//if (typeid(*b) == typeid(Derived1))
+//	{
+//		cout << "Derived1" << endl;
+//	}
+//	Derived2* d2 = dynamic_cast<Derived2*>(b);	//<----- dynamic_casting return null(or0) if Derived1
+//	if(d2)
+//	//else if (typeid(*b) == typeid(Derived2))
+//	{
+//		cout << "Derived2" << endl;
+//	}
+//}
 
 
 
