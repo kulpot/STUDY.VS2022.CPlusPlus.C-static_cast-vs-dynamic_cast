@@ -27,15 +27,30 @@ public:
 };
 
 
-class Derived2 : public Base {};
+class Derived2 : public Base 
+{
+	int otherData;
+public:
+	Derived2() { otherData = 5; }
+};
 
 void main()
 {
-	Base* b = new Derived1;
-	Derived1* d1 = static_cast<Derived1*>(b);
-	d1->derived1Function();
+	Base* b = new Derived1;		
+	//Base* b = new Derived2;
+	Derived1* d1 = dynamic_cast<Derived1*>(b);		//runtime
+	if (d1)
+	{
+		d1->derived1Function();
+	}
 
+	//Base* b = new Derived2;
+	////Derived1* d1 = static_cast<Derived1*>(b);		//undefined data result by compile time
+	//d1->derived1Function();
 
+	//Base* b = new Derived1;
+	//Derived1* d1 = static_cast<Derived1*>(b);
+	//d1->derived1Function();
 
 	delete b;
 }
