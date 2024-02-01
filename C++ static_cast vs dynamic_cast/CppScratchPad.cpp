@@ -31,7 +31,13 @@ class Derived2 : public Base {};
 
 void main()
 {
+	Base* b = new Derived1;
+	Derived1* d1 = static_cast<Derived1*>(b);
+	d1->derived1Function();
 
+
+
+	delete b;
 }
 
 
