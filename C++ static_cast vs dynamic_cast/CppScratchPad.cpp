@@ -22,7 +22,7 @@ public:
 	Derived1() { someData = 0; }
 	void derived1Function()
 	{
-		cout << "Derived::derived1Function()" << someData << endl;
+		cout << "Derived1::derived1Function() " << someData << endl;
 	}
 };
 
